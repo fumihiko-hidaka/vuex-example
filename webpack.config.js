@@ -1,6 +1,8 @@
 'use strict';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const eventName = process.env.npm_lifecycle_event;
+
 module.exports = {
   entry: {
     app: [
@@ -17,7 +19,7 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: eventName === 'build' ? './' : '/',
   },
   resolve: {
     extensions: ['.js', '.vue'],
