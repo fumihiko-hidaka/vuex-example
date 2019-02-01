@@ -32,11 +32,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
         exclude: /node_modules\/.*/,
-        query: {
-          presets: ['env'],
-        },
+        use: 'babel-loader'
       }
     ]
   },
