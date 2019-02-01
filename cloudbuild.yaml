@@ -1,10 +1,10 @@
 steps:
   - name: node:8.11.4
-    entrypoint: npm
+    entrypoint: yarn
     args: ['install']
   - name: node:8.11.4
-    entrypoint: npm
-    args: ['run', 'build']
+    entrypoint: yarn
+    args: ['build']
   - name: gcr.io/cloud-builders/gsutil
     args: [
       'rsync',
